@@ -13,9 +13,9 @@ module.exports = {
     },
     files: [{
       expand: true,
-      cwd: '<%= yeoman.dist %>',
-      src: ['*.html', 'views/*.html'],
-      dest: '<%= yeoman.dist %>'
+      cwd: 'src/main/webapp/scripts/app',
+      src: '**/*.html',
+      dest: '.tmp/views/app'
     }]
   }
-}
+};

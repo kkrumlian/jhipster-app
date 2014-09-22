@@ -16,8 +16,9 @@ module.exports = (grunt, options) ->
 
   build: [
     'clean:dist'
-    'html2js'
+    'htmlmin'
     'useminPrepare'
+    'ngtemplates'
     'concurrent:dist'
     'autoprefixer'
     'concat'
@@ -28,7 +29,6 @@ module.exports = (grunt, options) ->
     'uglify'
     'rev'
     'usemin'
-    'htmlmin'
   ]
 
   buildHeroku: [
