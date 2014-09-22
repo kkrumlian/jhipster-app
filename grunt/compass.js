@@ -1,6 +1,6 @@
 module.exports = {
   options: {
-    sassDir: 'src/main/scss',
+    sassDir: 'src/main/webapp/styles/scss',
     cssDir: 'src/main/webapp/styles',
     generatedImagesDir: '.tmp/images/generated',
     imagesDir: 'src/main/webapp/images',

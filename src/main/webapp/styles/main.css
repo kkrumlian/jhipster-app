@@ -7886,14 +7886,14 @@ button.close {
     display: none !important;
   }
 }
-/* line 5, ../../scss/main.scss */
+/* line 5, scss/main.scss */
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
-/* line 11, ../../scss/main.scss */
+/* line 11, scss/main.scss */
 .development {
   position: absolute;
   width: 149px;
@@ -7907,7 +7907,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* line 24, ../../scss/main.scss */
+/* line 24, scss/main.scss */
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 300px;
@@ -7919,20 +7919,20 @@ body {
   padding: 60px;
 }
 
-/* line 35, ../../scss/main.scss */
+/* line 35, scss/main.scss */
 .hero-unit h1 {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
 }
 
-/* line 41, ../../scss/main.scss */
+/* line 41, scss/main.scss */
 .error {
   color: white;
   background-color: red;
 }
 
-/* line 46, ../../scss/main.scss */
+/* line 46, scss/main.scss */
 .hipster {
   display: inline-block;
   width: 463px;
@@ -7943,13 +7943,13 @@ body {
 }
 
 /* make sure browsers use the pointer cursor for anchors, even with no href */
-/* line 56, ../../scss/main.scss */
+/* line 56, scss/main.scss */
 a:hover {
   cursor: pointer;
 }
 
 /* start Password strength bar style */
-/* line 62, ../../scss/main.scss */
+/* line 62, scss/main.scss */
 ul#strength {
   display: inline;
   list-style: none;
@@ -7959,12 +7959,12 @@ ul#strength {
   vertical-align: 2px;
 }
 
-/* line 71, ../../scss/main.scss */
+/* line 71, scss/main.scss */
 .point:last {
   margin: 0 !important;
 }
 
-/* line 74, ../../scss/main.scss */
+/* line 74, scss/main.scss */
 .point {
   background: #DDD;
   border-radius: 2px;
