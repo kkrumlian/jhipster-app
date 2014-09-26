@@ -1,0 +1,85 @@
+<div class="page page-table">
+
+    <div ng-show="show">
+    <section class="panel panel-primary table-dynamic">
+        <div class="panel-heading"><strong>List Authorization Statuses</strong></div>
+        <br>
+        <div class="col-sm-2">
+            <button class="btn btn-primary btn-lg" ng-click="newStatus()">
+                <span class="glyphicon glyphicon-flash"></span> Create a new Authorization Status
+            </button>
+        </div>
+        <div class="col-sm-10"></div>
+        <table class="responsive table table-striped">
+            <thead>
+                <tr>
+                    <th><div class="th">
+                        ID
+                    </div></th>
+                    <th><div class="th">
+                        Status
+                    </div></th>
+                    <th><div class="th">
+                        Action
+                    </div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="authorizationStatus in authorizationStatuses">
+                    <td>{{authorizationStatus.id}}</td>
+                    <td>{{authorizationStatus.status}}</td>
+                    <td>
+                        <button type="submit"
+                                ng-click="update(authorizationStatus.id)"
+                                class="btn">
+                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(authorizationStatus.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+    </div>
+    <div ng-show="!show">
+    <section class="panel panel-primary">
+        <div class="panel-heading"><strong>Create or edit a Authorization Status</strong></div>
+        <div class="panel-body">
+        <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label>ID</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="id"
+                       ng-model="authorizationStatus.id" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label>Status</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name"
+                       ng-model="authorizationStatus.status" ng-minlength=1 ng-maxlength=1024 required>
+                </div>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-default" ng-click="clear()">
+                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                </button>
+                <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="create()">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+            </div>
+        </form>
+        </div>
+    </section>    
+    </div>
+</div>

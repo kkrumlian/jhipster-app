@@ -11,7 +11,8 @@ var jhipsterApp = angular.module('jhipsterApp', [
         'truncate',
         'PP-language',
         'PP-account',
-        'PP-admin'
+        'PP-admin',
+        'PP-manageCustomer'
     ])
 
     .config(function ($routeProvider, $httpProvider, USER_ROLES) {

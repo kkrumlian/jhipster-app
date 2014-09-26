@@ -1,0 +1,220 @@
+<div class="page page-table">
+
+    <div ng-show="show">
+    <section class="panel panel-primary table-dynamic">
+        <div class="panel-heading"><strong>List Authorizations</strong></div>
+        <br>
+        <div class="col-sm-2">
+            <button class="btn btn-primary btn-lg" ng-click="newAuthorization()">
+                <span class="glyphicon glyphicon-flash"></span> Create a new Authorization
+            </button>
+        </div>
+        <div class="col-sm-10"></div>
+        <table class="responsive table table-striped">
+            <thead>
+                <tr>
+                    <th><div class="th">
+                        ID
+                    </div></th>
+                    <th><div class="th">
+                        PForm URL
+                    </div></th>
+                    <th><div class="th">
+                        PForm Api Key
+                    </div></th>
+                    <th><div class="th">
+                        Study
+                    </div></th>
+                    <th><div class="th">
+                        Status
+                    </div></th> 
+                    <th><div class="th">
+                        Created By
+                    </div></th>
+                    <th><div class="th">
+                        Created Date
+                    </div></th>
+                    <th><div class="th">
+                        Last Modified By
+                    </div></th>
+                    <th><div class="th">
+                        Last Modified Date
+                    </div></th>
+                    <th><div class="th">
+                        Action
+                    </div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="authorization in authorizations">
+                    <td>{{authorization.id}}</td>
+                    <td>{{authorization.pformUrl}}</td>
+                    <td>{{authorization.pformApiKey}}</td>
+                    <td>{{authorization.study.studyOid}} / {{authorization.study.instanceUrl}}</td>
+                    <td>{{authorization.authorizationStatus.status}}</td> 
+                    <td>{{authorization.createdBy}}</td>
+                    <td>{{authorization.createdDate | date:'MM/dd/yyyy  h:mma'}}</td>
+                    <td>{{authorization.lastModifiedBy}}</td>
+                    <td>{{authorization.lastModifiedDate | date:'MM/dd/yyyy  h:mma'}}</td>
+                    <td>
+                        <button type="submit"
+                                ng-click="update(authorization.id)"
+                                class="btn">
+                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(authorization.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+    </div>
+    <div ng-show="!show">
+    <section class="panel panel-primary">
+        <div class="panel-heading"><strong>Create or edit a Authorization</strong></div>
+        <div class="panel-body">
+        <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label>ID</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="id"
+                       ng-model="authorization.id" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label>PForm URL</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="pformUrl"
+                       ng-model="authorization.pformUrl" ng-minlength=1 ng-maxlength=512 required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label>PForm Api Key</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="pformApiKey"
+                       ng-model="authorization.pformApiKey" ng-minlength=1 ng-maxlength=512 required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label>Study</label>
+                </div>
+                <div class="col-sm-10">
+                    <span class="ui-select">
+                        <select ng-model="authorization.study" ng-options="study.studyOid +' / '+ study.instanceUrl for study in studies" required></select>
+                    </span>
+                </div>
+            </div>
+            <div ng-show="authorization.study != undefined">
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        <label>Study detail</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <table class="responsive table table-striped">
+                            <thead>
+                                <tr>
+                                    <th><div class="th">
+                                        ID
+                                    </div></th>
+                                    <th><div class="th">
+                                        Instance Url
+                                    </div></th>
+                                    <th><div class="th">
+                                        Study Oid
+                                    </div></th>
+                                    <th><div class="th">
+                                        Organization Id
+                                    </div></th>
+                                    <th><div class="th">
+                                        Created By
+                                    </div></th>
+                                    <th><div class="th">
+                                        Created Date
+                                    </div></th>
+                                    <th><div class="th">
+                                        Last Modified By
+                                    </div></th>
+                                    <th><div class="th">
+                                        Last Modified Date
+                                    </div></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{authorization.study.id}}</td>
+                                    <td>{{authorization.study.instanceUrl}}</td>
+                                    <td>{{authorization.study.studyOid}}</td>
+                                    <td>{{authorization.study.organization.id}}</td>
+                                    <td>{{authorization.study.createdBy}}</td>
+                                    <td>{{authorization.study.createdDate | date:'MM/dd/yyyy  h:mma'}}</td>
+                                    <td>{{authorization.study.lastModifiedBy}}</td>
+                                    <td>{{authorization.study.lastModifiedDate | date:'MM/dd/yyyy  h:mma'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label>Status</label>
+                </div>
+                <div class="col-sm-10">
+                    <span class="ui-select">
+                        <select ng-model="authorization.authorizationStatus" ng-options="authorizationStatus.status for authorizationStatus in authorizationStatuses" required></select>
+                    </span>
+                </div>
+            </div>
+            <div ng-show="authorization.authorizationStatus != undefined">
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        <label>Authorization Status detail</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <table class="responsive table table-striped">
+                            <thead>
+                                <tr>
+                                    <th><div class="th">
+                                        ID
+                                    </div></th>
+                                    <th><div class="th">
+                                        Status
+                                    </div></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{authorization.authorizationStatus.id}}</td>
+                                    <td>{{authorization.authorizationStatus.status}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div> 
+            <div class="text-right">
+                <button type="button" class="btn btn-default" ng-click="clear()">
+                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                </button>
+                <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="create()">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+            </div>
+        </form>
+        </div>
+    </section>    
+    </div>
+</div>
