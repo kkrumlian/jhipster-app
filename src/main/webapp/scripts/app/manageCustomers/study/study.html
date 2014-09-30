@@ -2,48 +2,30 @@
 
     <div ng-show="show">
     <section class="panel panel-primary table-dynamic">
-        <div class="panel-heading"><strong>List Studies</strong></div>
+        <div class="panel-heading"><strong>List of Studies</strong></div>
         <br>
-        <div class="col-sm-2">
+        <div class="col-md-2">
             <button class="btn btn-primary btn-lg" ng-click="newStudy()">
                 <span class="glyphicon glyphicon-flash"></span> Create a new Study
             </button>
         </div>
-        <div class="col-sm-10"></div>
+        <div class="col-md-10"></div>
         <table class="responsive table table-striped">
             <thead>
                 <tr>
-                    <th><div class="th">
-                        ID
-                    </div></th>
-                    <th><div class="th">
-                        Instance URL
-                    </div></th>
-                    <th><div class="th">
-                        Study OID
-                    </div></th>
-                    <th><div class="th">
-                        Organization
-                    </div></th>
-                    <th><div class="th">
-                        Created By
-                    </div></th>
-                    <th><div class="th">
-                        Created Date
-                    </div></th>
-                    <th><div class="th">
-                        Last Modified By
-                    </div></th>
-                    <th><div class="th">
-                        Last Modified Date
-                    </div></th>
-                    <th><div class="th">
-                        Action
-                    </div></th>
+                    <th>ID</th>
+                    <th>Instance URL</th>
+                    <th>Study OID</th>
+                    <th>Organization</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Last Modified By</th>
+                    <th>Last Modified Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="study in studies">
+                <tr data-ng-repeat="study in studies" style="word-break: break-word;">
                     <td>{{study.id}}</td>
                     <td>{{study.instanceUrl}}</td>
                     <td>{{study.studyOid}}</td>
@@ -72,80 +54,72 @@
     </div>
     <div ng-show="!show">
     <section class="panel panel-primary">
-        <div class="panel-heading"><strong>Create or edit a Study</strong></div>
+        <div class="panel-heading"><strong>Create or Edit a Study</strong></div>
         <div class="panel-body">
         <form name="form" role="form" novalidate
                       class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength form-horizontal">
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>ID</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="id"
                        ng-model="study.id" readonly>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Instance URL</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="instanceUrl"
                        ng-model="study.instanceUrl" ng-minlength=1 ng-maxlength=255 required>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Study OID</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="pformApiKey"
                        ng-model="study.studyOid" ng-minlength=1 ng-maxlength=255 required>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Organization</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <span class="ui-select">
-                        <select ng-model="study.organization" ng-options="organization.name +' / '+ organization.customerNumber for organization in organizations" required></select>
+                        <select ng-model="study.organization" ng-options="organization.name +' / '+ organization.customerNumber for organization in organizations" required required style="width: 50%;">
+                            <option value="">select one</option>
+                        </select>
                     </span>
                 </div>
             </div>
             <div ng-show="study.organization != undefined">
                 <div class="form-group">
-                    <div class="col-sm-2">
-                        <label>Organization detail</label>
+                    <div class="col-md-2">
+                        <label>Organization Detail</label>
                     </div>
-                    <div class="col-sm-10">
+                    <div class="col-md-10">
                         <table class="responsive table table-striped">
                             <thead>
                                 <tr>
-                                    <th><div class="th">
-                                        ID
-                                    </div></th>
-                                    <th><div class="th">
-                                        Name
-                                    </div></th>
-                                    <th><div class="th">
-                                        Created By
-                                    </div></th>
-                                    <th><div class="th">
-                                        Created Date
-                                    </div></th>
-                                    <th><div class="th">
-                                        Last Modified By
-                                    </div></th>
-                                    <th><div class="th">
-                                        Last Modified Date
-                                    </div></th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Customer Number</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                    <th>Last Modified By</th>
+                                    <th>Last Modified Date</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr style="word-break: break-word;">
                                     <td>{{study.organization.id}}</td>
                                     <td>{{study.organization.name}}</td>
+                                    <td>{{study.organization.customerNumber}}</td>
                                     <td>{{study.organization.createdBy}}</td>
                                     <td>{{study.organization.createdDate | date:'MM/dd/yyyy  h:mma'}}</td>
                                     <td>{{study.organization.lastModifiedBy}}</td>

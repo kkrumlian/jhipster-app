@@ -2,30 +2,24 @@
 
     <div ng-show="show">
     <section class="panel panel-primary table-dynamic">
-        <div class="panel-heading"><strong>List Authorization Statuses</strong></div>
+        <div class="panel-heading"><strong>List of Statuses</strong></div>
         <br>
-        <div class="col-sm-2">
+        <div class="col-md-2">
             <button class="btn btn-primary btn-lg" ng-click="newStatus()">
-                <span class="glyphicon glyphicon-flash"></span> Create a new Authorization Status
+                <span class="glyphicon glyphicon-flash"></span> Create a New Status
             </button>
         </div>
-        <div class="col-sm-10"></div>
+        <div class="col-md-10"></div>
         <table class="responsive table table-striped">
             <thead>
                 <tr>
-                    <th><div class="th">
-                        ID
-                    </div></th>
-                    <th><div class="th">
-                        Status
-                    </div></th>
-                    <th><div class="th">
-                        Action
-                    </div></th>
+                    <th>ID</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="authorizationStatus in authorizationStatuses">
+                <tr data-ng-repeat="authorizationStatus in authorizationStatuses" style="word-break: break-word;">
                     <td>{{authorizationStatus.id}}</td>
                     <td>{{authorizationStatus.status}}</td>
                     <td>
@@ -48,24 +42,24 @@
     </div>
     <div ng-show="!show">
     <section class="panel panel-primary">
-        <div class="panel-heading"><strong>Create or edit a Authorization Status</strong></div>
+        <div class="panel-heading"><strong>Create or Edit a Status</strong></div>
         <div class="panel-body">
         <form name="form" role="form" novalidate
                       class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength form-horizontal">
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>ID</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="id"
                        ng-model="authorizationStatus.id" readonly>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Status</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="name"
                        ng-model="authorizationStatus.status" ng-minlength=1 ng-maxlength=1024 required>
                 </div>

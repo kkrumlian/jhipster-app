@@ -2,45 +2,29 @@
 
     <div ng-show="show">
     <section class="panel panel-primary table-dynamic">
-        <div class="panel-heading"><strong>List Organizations</strong></div>
+        <div class="panel-heading"><strong>List of Organizations</strong></div>
         <br>
-        <div class="col-sm-2">
+        <div class="col-md-2">
             <button class="btn btn-primary btn-lg" ng-click="newOrganization()">
-                <span class="glyphicon glyphicon-flash"></span> Create a new Organization
+                <span class="glyphicon glyphicon-flash"></span> Create a New Organization
             </button>
         </div>
-        <div class="col-sm-10"></div>
+        <div class="col-md-10"></div>
         <table class="responsive table table-striped">
             <thead>
                 <tr>
-                    <th><div class="th">
-                        ID
-                    </div></th>
-                    <th><div class="th">
-                        Name
-                    </div></th>
-                    <th><div class="th">
-                        Customer Number
-                    </div></th>
-                    <th><div class="th">
-                        Created By
-                    </div></th>
-                    <th><div class="th">
-                        Created Date
-                    </div></th>
-                    <th><div class="th">
-                        Last Modified By
-                    </div></th>
-                    <th><div class="th">
-                        Last Modified Date
-                    </div></th>
-                    <th><div class="th">
-                        Action
-                    </div></th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Customer Number</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Last Modified By</th>
+                    <th>Last Modified Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="organization in organizations">
+                <tr data-ng-repeat="organization in organizations" style="word-break: break-word;">
                     <td>{{organization.id}}</td>
                     <td>{{organization.name}}</td>
                     <td>{{organization.customerNumber}}</td>
@@ -68,33 +52,33 @@
     </div>
     <div ng-show="!show">
     <section class="panel panel-primary">
-        <div class="panel-heading"><strong>Create or edit a Organization</strong></div>
+        <div class="panel-heading"><strong>Create or Edit an Organization</strong></div>
         <div class="panel-body">
         <form name="form" role="form" novalidate
                       class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength form-horizontal">
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>ID</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="id"
                        ng-model="organization.id" readonly>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Name</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="name"
                        ng-model="organization.name" ng-minlength=1 ng-maxlength=512 required>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Customer Number</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="name"
                        ng-model="organization.customerNumber" ng-minlength=1 ng-maxlength=512 required>
                 </div>

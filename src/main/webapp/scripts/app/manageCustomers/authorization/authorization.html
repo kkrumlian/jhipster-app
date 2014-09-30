@@ -2,55 +2,35 @@
 
     <div ng-show="show">
     <section class="panel panel-primary table-dynamic">
-        <div class="panel-heading"><strong>List Authorizations</strong></div>
+        <div class="panel-heading"><strong>List of Authorizations</strong></div>
         <br>
-        <div class="col-sm-2">
+        <div class="col-md-2">
             <button class="btn btn-primary btn-lg" ng-click="newAuthorization()">
-                <span class="glyphicon glyphicon-flash"></span> Create a new Authorization
+                <span class="glyphicon glyphicon-flash"></span> Create a New Authorization
             </button>
         </div>
-        <div class="col-sm-10"></div>
+        <div class="col-md-10"></div>
         <table class="responsive table table-striped">
             <thead>
                 <tr>
-                    <th><div class="th">
-                        ID
-                    </div></th>
-                    <th><div class="th">
-                        PForm URL
-                    </div></th>
-                    <th><div class="th">
-                        PForm Api Key
-                    </div></th>
-                    <th><div class="th">
-                        Study
-                    </div></th>
-                    <th><div class="th">
-                        Status
-                    </div></th> 
-                    <th><div class="th">
-                        Created By
-                    </div></th>
-                    <th><div class="th">
-                        Created Date
-                    </div></th>
-                    <th><div class="th">
-                        Last Modified By
-                    </div></th>
-                    <th><div class="th">
-                        Last Modified Date
-                    </div></th>
-                    <th><div class="th">
-                        Action
-                    </div></th>
+                    <th>ID</th>
+                    <th>PForm URL</th>
+                    <th>PForm API Key</th>
+                    <th>Study</th>
+                    <th>Status</th> 
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Last Modified By</th>
+                    <th>Last Modified Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="authorization in authorizations">
+                <tr data-ng-repeat="authorization in authorizations" style="word-break: break-word;">
                     <td>{{authorization.id}}</td>
                     <td>{{authorization.pformUrl}}</td>
                     <td>{{authorization.pformApiKey}}</td>
-                    <td>{{authorization.study.studyOid}} / {{authorization.study.instanceUrl}}</td>
+                    <td>{{authorization.study.id}}/{{authorization.study.instanceUrl}}</td>
                     <td>{{authorization.authorizationStatus.status}}</td> 
                     <td>{{authorization.createdBy}}</td>
                     <td>{{authorization.createdDate | date:'MM/dd/yyyy  h:mma'}}</td>
@@ -76,88 +56,74 @@
     </div>
     <div ng-show="!show">
     <section class="panel panel-primary">
-        <div class="panel-heading"><strong>Create or edit a Authorization</strong></div>
+        <div class="panel-heading"><strong>Create or Edit an Authorization</strong></div>
         <div class="panel-body">
         <form name="form" role="form" novalidate
                       class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength form-horizontal">
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>ID</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="id"
                        ng-model="authorization.id" readonly>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>PForm URL</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="pformUrl"
                        ng-model="authorization.pformUrl" ng-minlength=1 ng-maxlength=512 required>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
-                    <label>PForm Api Key</label>
+                <div class="col-md-2">
+                    <label>PForm API Key</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="pformApiKey"
                        ng-model="authorization.pformApiKey" ng-minlength=1 ng-maxlength=512 required>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Study</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <span class="ui-select">
-                        <select ng-model="authorization.study" ng-options="study.studyOid +' / '+ study.instanceUrl for study in studies" required></select>
+                        <select ng-model="authorization.study" ng-options="study.studyOid +' / '+ study.instanceUrl for study in studies" required style="width: 50%;">
+                            <option value="">select one</option>
+                        </select>
                     </span>
                 </div>
             </div>
             <div ng-show="authorization.study != undefined">
                 <div class="form-group">
-                    <div class="col-sm-2">
-                        <label>Study detail</label>
+                    <div class="col-md-2">
+                        <label>Study Detail</label>
                     </div>
-                    <div class="col-sm-10">
+                    <div class="col-md-10">
                         <table class="responsive table table-striped">
                             <thead>
                                 <tr>
-                                    <th><div class="th">
-                                        ID
-                                    </div></th>
-                                    <th><div class="th">
-                                        Instance Url
-                                    </div></th>
-                                    <th><div class="th">
-                                        Study Oid
-                                    </div></th>
-                                    <th><div class="th">
-                                        Organization Id
-                                    </div></th>
-                                    <th><div class="th">
-                                        Created By
-                                    </div></th>
-                                    <th><div class="th">
-                                        Created Date
-                                    </div></th>
-                                    <th><div class="th">
-                                        Last Modified By
-                                    </div></th>
-                                    <th><div class="th">
-                                        Last Modified Date
-                                    </div></th>
+                                    <th>ID</th>
+                                    <th>Instance URL</th>
+                                    <th>Study OID</th>
+                                    <th>Organization</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                    <th>Last Modified By</th>
+                                    <th>Last Modified Date</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr style="word-break: break-word;">
                                     <td>{{authorization.study.id}}</td>
                                     <td>{{authorization.study.instanceUrl}}</td>
                                     <td>{{authorization.study.studyOid}}</td>
-                                    <td>{{authorization.study.organization.id}}</td>
+                                    <td>{{authorization.study.organization.name}} / {{authorization.study.organization.customerNumber}}</td>
                                     <td>{{authorization.study.createdBy}}</td>
                                     <td>{{authorization.study.createdDate | date:'MM/dd/yyyy  h:mma'}}</td>
                                     <td>{{authorization.study.lastModifiedBy}}</td>
@@ -169,34 +135,32 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <label>Status</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <span class="ui-select">
-                        <select ng-model="authorization.authorizationStatus" ng-options="authorizationStatus.status for authorizationStatus in authorizationStatuses" required></select>
+                        <select ng-model="authorization.authorizationStatus" ng-options="authorizationStatus.status for authorizationStatus in authorizationStatuses" required required style="width: 50%;">
+                            <option value="">select one</option>
+                        </select>
                     </span>
                 </div>
             </div>
             <div ng-show="authorization.authorizationStatus != undefined">
                 <div class="form-group">
-                    <div class="col-sm-2">
-                        <label>Authorization Status detail</label>
+                    <div class="col-md-2">
+                        <label>Status Detail</label>
                     </div>
-                    <div class="col-sm-10">
+                    <div class="col-md-10">
                         <table class="responsive table table-striped">
                             <thead>
                                 <tr>
-                                    <th><div class="th">
-                                        ID
-                                    </div></th>
-                                    <th><div class="th">
-                                        Status
-                                    </div></th>
+                                    <th>ID</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr style="word-break: break-word;">
                                     <td>{{authorization.authorizationStatus.id}}</td>
                                     <td>{{authorization.authorizationStatus.status}}</td>
                                 </tr>
