@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+module.exports = angular.module('ParticipantPortal', [])
     .directive('activeMenu', function($translate, $locale, tmhDynamicLocale) {
         return {
             restrict: 'A',

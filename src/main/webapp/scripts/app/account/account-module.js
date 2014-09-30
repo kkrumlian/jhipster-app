@@ -1,13 +1,15 @@
-angular.module('PP-account', [
-        'jhipsterAppConstants',
+require('../http-auth-interceptor');
+
+module.exports = angular.module('ppAccount', [
         'http-auth-interceptor',
-        'PP-account-login',
-        'PP-account-logout',
-        'PP-account-register',
-        'PP-account-settings',
-        'PP-account-password',
-        'PP-account-sessions',
-        'PP-account-activate'
+        require('../app-constants').name,
+        require('./login/login-module').name,
+        require('./logout/logout-module').name,
+        require('./register/register-module').name,
+        require('./settings/settings-module').name,
+        require('./password/password-module').name,
+        require('./sessions/sessions-module').name,
+        require('./activate/activate-module').name
     ])
 
     .factory('Account', function ($resource) {

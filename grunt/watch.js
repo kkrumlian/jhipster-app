@@ -1,4 +1,8 @@
 module.exports = {
+  browserify: {
+    files: ['src/main/webapp/scripts/**/*.js'],
+    tasks: ['browserify']
+  },
   compass: {
     files: ['src/main/scss/{,*/}*.{scss,sass}'],
     tasks: ['compass:server', 'autoprefixer']

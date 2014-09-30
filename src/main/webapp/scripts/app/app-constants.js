@@ -1,7 +1,7 @@
 'use strict';
 
 /* Global Constants */
-angular.module('jhipsterAppConstants',[])
+module.exports = angular.module('ppConstants',[])
 
     .constant('USER_ROLES', {
         all: '*',

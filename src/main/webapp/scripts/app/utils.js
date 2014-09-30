@@ -1,4 +1,4 @@
-angular.module('jhipsterAppUtils', [])
+module.exports = angular.module('utils', [])
     .service('Base64Service', function () {
         var keyStr = "ABCDEFGHIJKLMNOP" +
             "QRSTUVWXYZabcdef" +

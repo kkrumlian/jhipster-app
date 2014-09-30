@@ -7,28 +7,27 @@ module.exports = (grunt, options) ->
       grunt.task.run(['clean:server', 'concurrent:server', 'autoprefixer', 'configureProxies', 'connect:livereload', 'watch']);
 
   test: [
-    'clean:server'
-    'concurrent:test'
-    'autoprefixer'
-    'connect:test'
-    'karma'
+    # 'clean:server'
+    # 'concurrent:test'
+    # 'autoprefixer'
+    # 'connect:test'
+    # 'karma'
   ]
 
   build: [
     'clean:dist'
+    'browserify'
     'htmlmin'
-    'useminPrepare'
-    'ngtemplates'
+    # 'ngtemplates'
     'concurrent:dist'
     'autoprefixer'
-    'concat'
+    # 'concat'
     'copy:dist'
     'ngAnnotate'
-    'cssmin'
+    # 'cssmin'
     'replace'
     'uglify'
     'rev'
-    'usemin'
   ]
 
   buildHeroku: [

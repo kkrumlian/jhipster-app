@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('PP-account-settings', ['ngRoute', 'jhipsterAppConstants'])
+require('angular-route');
+
+module.exports = angular.module('ppAccountSettings', [
+        'ngRoute',
+        require('../../app-constants').name
+    ])
 
     .config(['$routeProvider', 'USER_ROLES',
     	function ($routeProvider, USER_ROLES) {

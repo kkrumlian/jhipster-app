@@ -1,7 +1,12 @@
-angular.module('PP-language', [
-        'jhipsterAppConstants',
+require('angular-translate');
+require('angular-translate-storage-cookie');
+require('angular-translate-loader-static-files');
+require('angular-dynamic-locale/src/tmhDinamicLocale');
+
+module.exports = angular.module('ppLanguage', [
         'tmh.dynamicLocale',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        require('../app-constants').name
     ])
 
     .config(function($translateProvider, tmhDynamicLocaleProvider) {

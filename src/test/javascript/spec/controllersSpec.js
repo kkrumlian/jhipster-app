@@ -1,8 +1,10 @@
 'use strict';
 
+require('angular-mocks');
+
 describe('Controllers Tests ', function () {
 
-    beforeEach(module('jhipsterApp'));
+    beforeEach(module('ParticipantPortal'));
 
     describe('LoginController', function () {
         var $scope;

@@ -1,8 +1,10 @@
 'use strict';
 
+require('angular-mocks');
+
 describe('Services Tests ', function () {
 
-    beforeEach(module('jhipsterApp'));
+    beforeEach(module('ParticipantPortal'));
 
     describe('AuthenticationSharedService', function () {
         var serviceTested,
