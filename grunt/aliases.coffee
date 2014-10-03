@@ -4,7 +4,7 @@ module.exports = (grunt, options) ->
     if target is 'dist'
       grunt.task.run(['build', 'connect:dist:keepalive'])
     else
-      grunt.task.run(['clean:server', 'concurrent:server', 'autoprefixer', 'configureProxies', 'connect:livereload', 'watch']);
+      grunt.task.run(['clean:server', 'browserify', 'concurrent:server', 'autoprefixer', 'configureProxies', 'connect:livereload', 'watch']);
 
   test: [
     # 'clean:server'
@@ -27,7 +27,7 @@ module.exports = (grunt, options) ->
     # 'cssmin'
     'replace'
     'uglify'
-    'rev'
+    # 'rev'
   ]
 
   buildHeroku: [
