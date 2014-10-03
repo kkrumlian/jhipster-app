@@ -2,41 +2,44 @@
 
 /* App Module */
 
-var jhipsterApp = angular.module('jhipsterApp', [
-        'ngResource',
+require('angular');
+require('angular-resource');
+require('angular-route');
+require('angular-cookies');
+
+module.exports = angular.module('ParticipantPortal', [
         'ngRoute',
+        'ngResource',
         'ngCookies',
-        'jhipsterAppConstants',
-        'jhipsterAppUtils',
-        'truncate',
-        'PP-language',
-        'PP-account',
-        'PP-admin',
-        'PP-manageCustomer'
+        require('./utils').name,
+        require('./truncate').name,
+        require('./app-constants').name,
+        require('./app-directives').name,
+        require('./language/language-module').name,
+        require('./admin/admin-module').name,
+        require('./account/account-module').name,
+        require('./manageCustomers/manageCustomer-module').name
     ])
 
-    .config(function ($routeProvider, $httpProvider, USER_ROLES) {
+    .config(function($routeProvider, $httpProvider, USER_ROLES) {
         $routeProvider
-            .when('/error', {
-                templateUrl: 'scripts/app/error-view.html',
-                access: {
-                    authorizedRoles: [USER_ROLES.all]
-                }
-            })
             .otherwise({
                 templateUrl: 'scripts/app/app-view.html',
                 controller: 'MainController',
                 access: {
-                    authorizedRoles: [USER_ROLES.all]
+                    authorizeRoles: ''
                 }
-            });
+            })
     })
 
     .controller('MainController', function ($scope) {
+        console.log('MainController');
     })
 
     .controller('MenuController', function ($scope) {
+        console.log('MenuController');
     })
 
     .run(function() {
+        console.log('Run');
     });

@@ -1,10 +1,12 @@
-angular.module('PP-manageCustomer', [
-        'jhipsterAppConstants',
+require('../http-auth-interceptor');
+
+module.exports = angular.module('PP-manageCustomer', [
         'http-auth-interceptor',
-        'PP-manageCustomer-authorizationStatus',
-        'PP-manageCustomer-organization',
-        'PP-manageCustomer-study',
-        'PP-manageCustomer-authorization'
+        require('../app-constants').name,
+        require('./authorizationStatus/authorizationStatus-module').name,
+        require('./organization/organization-module').name,
+        require('./study/study-module').name,
+        require('./authorization/authorization-module').name
     ])
 
     .factory('AuthorizationStatus', ['$resource',

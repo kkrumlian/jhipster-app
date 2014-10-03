@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('PP-manageCustomer-authorization', ['ngRoute', 'jhipsterAppConstants'])
+require('angular-route');
+
+module.exports = angular.module('PP-manageCustomer-authorization', [
+        'ngRoute',
+        require('../../app-constants').name
+    ])
     
     .config(['$routeProvider', '$httpProvider', '$translateProvider', 'USER_ROLES',
         function ($routeProvider, $httpProvider, $translateProvider, USER_ROLES) {

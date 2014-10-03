@@ -5,6 +5,7 @@
  * (c) 2012 Witold Szczerba
  * License: MIT
  */
+
 (function () {
     'use strict';
 

@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('PP-admin-audits', ['ngRoute', 'jhipsterAppConstants'])
+require('angular-route');
+
+module.exports = angular.module('ppAdminAudits', [
+        'ngRoute',
+        require('../../app-constants').name
+    ])
 
     .config(['$routeProvider', 'USER_ROLES',
         function ($routeProvider, USER_ROLES) {
