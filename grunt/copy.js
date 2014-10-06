@@ -7,9 +7,9 @@ module.exports = {
       dest: '<%= yeoman.dist %>',
       src: [
         '*.html',
-        'views/*.html',
         'images/{,*/}*.{png,gif,webp}',
-        'fonts/*'
+        'fonts/*',
+        'styles/*.css'
       ]
     }, {
       expand: true,

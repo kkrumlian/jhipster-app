@@ -5,14 +5,19 @@ module.exports = {
     generatedImagesDir: '.tmp/images/generated',
     imagesDir: 'src/main/webapp/images',
     javascriptsDir: 'src/main/webapp/scripts',
-    fontsDir: 'src/main/webapp/styles/fonts',
-    importPath: 'src/main/webapp/bower_components',
+    fontsDir: 'src/main/webapp/fonts',
+    importPath: 'src/main/webapp/scripts/vendor',
     httpImagesPath: '/images',
     httpGeneratedImagesPath: '/images/generated',
     httpFontsPath: '/styles/fonts',
-    relativeAssets: false
+    relativeAssets: true
   },
-  dist: {},
+  dist: {
+    options: {
+      debugInfo: false,
+      noLineComments: true
+    }
+  },
   server: {
     options: {
       debugInfo: true

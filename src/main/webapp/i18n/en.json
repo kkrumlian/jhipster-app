@@ -61,7 +61,7 @@
         }
     },
     "main": {
-        "title": "Welcome, Java Hipster!",
+        "title": "Welcome to ePro",
         "subtitle": "This is your homepage",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
