@@ -1,6 +1,6 @@
 require('../http-auth-interceptor');
 
-module.exports = angular.module('PP-manageCustomer', [
+module.exports = angular.module('ppManageCustomer', [
         'http-auth-interceptor',
         require('../app-constants').name,
         require('./authorizationStatus/authorizationStatus-module').name,

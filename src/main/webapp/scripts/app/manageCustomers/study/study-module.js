@@ -2,7 +2,7 @@
 
 require('angular-route');
 
-module.exports = angular.module('PP-manageCustomer-study', [
+module.exports = angular.module('ppManageCustomerStudy', [
         'ngRoute',
         require('../../app-constants').name
     ])

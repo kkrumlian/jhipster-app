@@ -2,7 +2,7 @@
 
 require('angular-route');
 
-module.exports = angular.module('PP-manageCustomer-authorization', [
+module.exports = angular.module('ppManageCustomerAuthorization', [
         'ngRoute',
         require('../../app-constants').name
     ])
