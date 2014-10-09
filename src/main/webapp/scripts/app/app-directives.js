@@ -1,5 +1,4 @@
 'use strict';
-
 module.exports = angular.module('ppDirectives', [])
     .directive('activeMenu', function($translate, $locale, tmhDynamicLocale) {
         return {
@@ -160,7 +159,7 @@ module.exports = angular.module('ppDirectives', [])
                 restrict: 'A',
                 link: function(scope, ele, attrs) {
                     var $window, Timer, app, updateClass;
-                    app = $('#jhipsterApp');
+                    app = $('#ParticipantPortal');
                     $window = $(window);
                     ele.on('click', function(e) {
                         if (app.hasClass('nav-min')) {
@@ -200,7 +199,7 @@ module.exports = angular.module('ppDirectives', [])
                     $a = $lists.children('a');
                     $listsRest = ele.children('li').not($lists);
                     $aRest = $listsRest.children('a');
-                    app = $('#jhipsterApp');
+                    app = $('#ParticipantPortal');
                     $a.on('click', function(event) {
                         var $parent, $this;
                         if (app.hasClass('nav-min')) {
@@ -269,7 +268,7 @@ module.exports = angular.module('ppDirectives', [])
                 restrict: 'A',
                 link: function(scope, ele, attrs) {
                     return ele.on('click', function() {
-                        return $('#jhipsterApp').toggleClass('on-canvas');
+                        return $('#ParticipantPortal').toggleClass('on-canvas');
                     });
                 }
             };
@@ -281,7 +280,6 @@ module.exports = angular.module('ppDirectives', [])
             return {
                 restrict: 'A',
                 link: function(scope, ele, attrs) {
-                    console.log('slimScroll');
                     return ele.slimScroll({
                         height: '100%'
                     });

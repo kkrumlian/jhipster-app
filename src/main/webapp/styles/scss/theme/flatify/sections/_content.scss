@@ -14,7 +14,7 @@
     -webkit-overflow-scrolling: touch;
     -webkit-overflow-scrolling: -blackberry-touch;
     // @include transition(left .3s ease-in-out);
-    @media (min-width:$screen-sm) {
+    @media (min-width:$screen-md) {
         top: $header_height;
         width: auto;
         left: 220px;
@@ -40,5 +40,11 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+    }
+}
+
+.on-canvas {
+    #content {
+    width: auto;
     }
 }

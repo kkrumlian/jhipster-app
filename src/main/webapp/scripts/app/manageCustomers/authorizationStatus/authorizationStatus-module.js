@@ -24,8 +24,8 @@ module.exports = angular.module('ppManageCustomerAuthorizationStatus', [
                 })
         }])
 
-	.controller('AuthorizationStatusController', ['$scope', 'resolvedAuthorizationStatus', 'AuthorizationStatus',
-    function ($scope, resolvedAuthorizationStatus, AuthorizationStatus) {
+	.controller('AuthorizationStatusController', ['$scope', 'resolvedAuthorizationStatus', 'AuthorizationStatus', 'Responsive',
+    function ($scope, resolvedAuthorizationStatus, AuthorizationStatus, Responsive) {
 
         $scope.authorizationStatuses = resolvedAuthorizationStatus;
         $scope.show = true;
@@ -35,6 +35,7 @@ module.exports = angular.module('ppManageCustomerAuthorizationStatus', [
                 function () {
                     $scope.authorizationStatuses = AuthorizationStatus.query();
                     $scope.show = true;
+                    Responsive.updateTables();
                     $scope.clear();
                 });
         };
