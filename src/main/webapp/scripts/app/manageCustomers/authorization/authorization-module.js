@@ -30,13 +30,25 @@ module.exports = angular.module('ppManageCustomerAuthorization', [
                 })
         }])
 
-	.controller('AuthorizationController', ['$scope', 'resolvedAuthorization', 'Authorization', 'resolvedAuthorizationStatus', 'resolvedStudy', 'Account',
-    function ($scope, resolvedAuthorization, Authorization, resolvedAuthorizationStatus, resolvedStudy) {
+	.controller('AuthorizationController', ['$scope', 'resolvedAuthorization', 'Authorization', 'resolvedAuthorizationStatus', 'resolvedStudy', 'Responsive',
+    function ($scope, resolvedAuthorization, Authorization, resolvedAuthorizationStatus, resolvedStudy, Responsive) {
 
         $scope.authorizations = resolvedAuthorization;
         $scope.show = true;
         $scope.studies = resolvedStudy;
         $scope.authorizationStatuses = resolvedAuthorizationStatus;
+
+        $scope.$watch('authorization.study', function() {
+            if (!$scope.show) {
+                Responsive.updateTables();
+            }
+        });
+
+        $scope.$watch('authorization.authorizationStatus', function() {
+            if (!$scope.show) {
+                Responsive.updateTables();
+            }
+        });
 
         $scope.create = function () {
             var organization = {

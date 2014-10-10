@@ -24,8 +24,8 @@ module.exports = angular.module('ppManageCustomerOrganization', [
                 })
         }])
 
-	.controller('OrganizationController', ['$scope', 'resolvedOrganization', 'Organization', 'Account',
-    function ($scope, resolvedOrganization, Organization, Account) {
+	.controller('OrganizationController', ['$scope', 'resolvedOrganization', 'Organization', 'Account', 'Responsive',
+    function ($scope, resolvedOrganization, Organization, Account, Responsive) {
 
         $scope.organizations = resolvedOrganization;
         $scope.show = true;
@@ -42,6 +42,7 @@ module.exports = angular.module('ppManageCustomerOrganization', [
                 function (val) {
                     $scope.organizations = Organization.query();
                     $scope.show = true;
+                    Responsive.updateTables();
                     $scope.clear();
                 });
         };

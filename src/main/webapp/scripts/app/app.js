@@ -10,7 +10,6 @@ require('angular-cookies');
 // Flatify Angular dependencies
 require('angular-animate'); 
 require('angular-bootstrap');
-
 module.exports = angular.module('ParticipantPortal', [
         // Angular Modules
         'ngRoute',

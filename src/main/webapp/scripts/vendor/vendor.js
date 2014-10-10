@@ -15,6 +15,7 @@ require('bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel');
 require('bootstrap-sass/vendor/assets/javascripts/bootstrap/scrollspy');
 require('bootstrap-sass/vendor/assets/javascripts/bootstrap/collapse');
 require('bootstrap-sass/vendor/assets/javascripts/bootstrap/tab');
+require('./responsive-tables');
 
 require('jquery.slimscroll');
 require('jquery.easing');

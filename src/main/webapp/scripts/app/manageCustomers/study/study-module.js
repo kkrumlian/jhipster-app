@@ -27,12 +27,18 @@ module.exports = angular.module('ppManageCustomerStudy', [
                 })
         }])
 
-	.controller('StudyController', ['$scope', 'resolvedStudy', 'Study', 'resolvedOrganization', 'Account',
-    function ($scope, resolvedStudy, Study, resolvedOrganization, Account) {
+	.controller('StudyController', ['$scope', 'resolvedStudy', 'Study', 'resolvedOrganization', 'Account', 'Responsive',
+    function ($scope, resolvedStudy, Study, resolvedOrganization, Account, Responsive) {
 
         $scope.studies = resolvedStudy;
         $scope.organizations = resolvedOrganization;
         $scope.show = true;
+
+        $scope.$watch('study.organization', function() {
+            if (!$scope.show) {
+                Responsive.updateTables();
+            }
+        });
 
         $scope.create = function () {
             var organization = {
