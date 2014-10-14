@@ -35,6 +35,13 @@ module.exports = angular.module('ParticipantPortal', [
 
     .config(function($routeProvider, $httpProvider, USER_ROLES) {
         $routeProvider
+            .when('/', {
+                templateUrl: 'scripts/app/app-main-view.html',
+                controller: 'MainController',
+                access: {
+                    authorizeRoles: ''
+                }
+            })
             .otherwise({
                 templateUrl: 'scripts/app/app-main-view.html',
                 controller: 'MainController',
