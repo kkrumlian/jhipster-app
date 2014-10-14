@@ -4,7 +4,7 @@ module.exports = (grunt, options) ->
     if target is 'dist'
       grunt.task.run(['build', 'connect:dist:keepalive'])
     else
-      grunt.task.run(['clean:server', 'browserify', 'concurrent:server', 'autoprefixer', 'configureProxies', 'connect:livereload', 'watch']);
+      grunt.task.run(['build', 'configureProxies', 'connect:livereload', 'watch']);
 
   test: [
     # 'clean:server'
@@ -18,11 +18,12 @@ module.exports = (grunt, options) ->
     'clean:dist'
     'browserify'
     'htmlmin'
-    # 'ngtemplates'
+    'ngtemplates'
     'concurrent:dist'
     'autoprefixer'
     # 'concat'
     'copy:dist'
+    'includeSource'
     'ngAnnotate'
     # 'cssmin'
     'replace'

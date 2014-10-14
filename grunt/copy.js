@@ -18,8 +18,13 @@ module.exports = {
       src: [
         'generated/*'
       ]
+    }, {
+      expand: true,
+      cwd: 'src/main/webapp/scripts/vendor/font-awesome',
+      dest: '<%= yeoman.dist %>',
+      src: 'fonts/*'
     }]
-  },
+  }, 
   styles: {
     expand: true,
     cwd: 'src/main/webapp/styles',

@@ -3,8 +3,8 @@ module.exports = {
     src: ['<%= yeoman.dist %>/index.html'],
     overwrite: true,                 // overwrite matched source files
     replacements: [{
-      from: '<div class="development"></div>',
-      to: ''
+		from: '<div class="development"></div>',
+		to: ''
     }]
   }
 }
