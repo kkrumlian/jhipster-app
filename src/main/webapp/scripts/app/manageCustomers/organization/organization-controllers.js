@@ -4,11 +4,11 @@ require('angular-route');
 
 module.exports = angular.module('ppManageCustomersOrganizationControllers',[
         'ngRoute',
-        require('./organization-services').name
+        require('./organization-services').name,
     ])
 
-	.controller('OrganizationController', ['$scope', '$route', 'OrganizationService', 'Account', 'Responsive',
-        function($scope, $route, OrganizationSvc, Account, Responsive) {
+	.controller('OrganizationController', ['$scope', '$route', 'OrganizationService', 'Responsive',
+        function($scope, $route, OrganizationSvc, Responsive) {
 
             $scope.organizations = $route.current.locals.resolvedOrganization;
             $scope.show = true;

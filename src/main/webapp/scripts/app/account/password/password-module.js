@@ -4,11 +4,13 @@ require('angular-route');
 
 module.exports = angular.module('ppAccountPassword', [
         'ngRoute',
-        require('../../app-constants').name
+        require('../../app-constants').name,
+        require('./password-services').name,
+        require('./password-controllers').name
     ])
 
     .config(['$routeProvider', 'USER_ROLES',
-    	function ($routeProvider, USER_ROLES) {
+    	function($routeProvider, USER_ROLES) {
             $routeProvider.when('/password', {
 		        templateUrl: 'scripts/app/account/password/password-view.html',
 		        controller: 'PasswordController',
@@ -17,32 +19,4 @@ module.exports = angular.module('ppAccountPassword', [
 		        }
             })
     	}
-	])
-	
-	.factory('Password', function ($resource) {
-	    return $resource('app/rest/account/change_password', {}, {});
-	})
-
-	.controller('PasswordController', ['$scope', 'Password',
-		function ($scope, Password) {
-	        $scope.success = null;
-	        $scope.error = null;
-	        $scope.doNotMatch = null;
-	        $scope.changePassword = function () {
-	            if ($scope.password != $scope.confirmPassword) {
-	                $scope.doNotMatch = "ERROR";
-	            } else {
-	                $scope.doNotMatch = null;
-	                Password.save($scope.password,
-	                    function (value, responseHeaders) {
-	                        $scope.error = null;
-	                        $scope.success = 'OK';
-	                    },
-	                    function (httpResponse) {
-	                        $scope.success = null;
-	                        $scope.error = "ERROR";
-	                    });
-	            }
-	        };
-	    }
-    ]);
+	]);

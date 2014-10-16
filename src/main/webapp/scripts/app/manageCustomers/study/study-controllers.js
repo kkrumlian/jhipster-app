@@ -6,10 +6,8 @@ module.exports = angular.module('ppManageCustomerStudyControllers',[
         'ngRoute',
         require('./study-services').name
     ])
-    .controller('StudyController', ['$scope', '$route', 'StudyService', 'Account', 'Responsive',
-        function($scope, $route, StudySvc, Account, Responsive) {
-            console.log($route);
-
+    .controller('StudyController', ['$scope', '$route', 'StudyService', 'Responsive',
+        function($scope, $route, StudySvc, Responsive) {
             $scope.studies = $route.current.locals.resolvedStudy;
             $scope.organizations = $route.current.locals.resolvedOrganization;
             $scope.show = true;
