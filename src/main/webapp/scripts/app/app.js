@@ -32,7 +32,8 @@ module.exports = angular.module('ParticipantPortal', [
         require('./admin/admin-module').name,
         require('./account/account-module').name,
         require('./manageCustomers/manageCustomer-module').name,
-        require('./manageUsers/manageUsers-module').name
+        require('./manageUsers/manageUsers-module').name,
+        require('./newUI/newUI-module').name
     ])
 
     .config(['$routeProvider', '$httpProvider', 'USER_ROLES',
