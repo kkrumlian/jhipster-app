@@ -1,0 +1,159 @@
+<div class="page page-table">
+
+    <div ng-show=true>
+    <section class="panel panel-primary table-dynamic">
+        <div class="panel-heading"><strong>Managing Your Diabetes Study</strong></div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <h4>
+                        <strong>
+                            Module 2: Activity and Well-being
+                        </strong>
+                    </h4>
+                </div>
+                <div ng-show="showNotification && taskName" class="col-md-6">
+                    <alert type="danger" close="close()">
+                        Great job! {{taskName}} complete!
+                    </alert>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <h4>
+                        {{taskRemaining}} forms left: complete by August 2nd
+                    </h4>
+                </div>
+                <div class="col-md-6">
+                    <progressbar max="100" value="percentase"><span>{{percentase}}% done</span></progressbar>
+                </div>
+            </div>
+
+            <div class="col-md-12 well well-lg">
+                <div ng-show="physical">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Physical Activity
+                            </h4>
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                This questionnaire will let us know how much physical activity is typical for you.
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" ng-click="change('physical')"><span class="glyphicon glyphicon-list-alt"></span> Let's go!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="!physical">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Physical Activity
+                                <span  class="btn-icon-round btn-icon-round-sm bg-success" style=" float: right; "><i class="glyphicon glyphicon-ok"></i></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 well well-lg">
+                <div ng-show="eat">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Eating Habits
+                            </h4>
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                Tell us about your eating habits.
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" ng-click="change('eat')"><span class="glyphicon glyphicon-list-alt"></span> Let's go!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="!eat">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Eating Habits
+                                <span  class="btn-icon-round btn-icon-round-sm bg-success" style=" float: right; "><i class="glyphicon glyphicon-ok"></i></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 well well-lg">
+                <div ng-show="sleep">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Sleep Habits
+                            </h4>
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                Tell us about your sleep habits.
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" ng-click="change('sleep')"><span class="glyphicon glyphicon-list-alt"></span> Let's go!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="!sleep">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Sleep Habits
+                                <span  class="btn-icon-round btn-icon-round-sm bg-success" style=" float: right; "><i class="glyphicon glyphicon-ok"></i></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 well well-lg">
+                <div ng-show="pain">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Pain and Discomfort
+                            </h4>
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                Tell us about your pain and discomfort.
+                            </p>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" ng-click="change('pain')"><span class="glyphicon glyphicon-list-alt"></span> Let's go!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="!pain">
+                    <div class="col-md-12 panel">
+                        <div class="col-md-12">
+                            <h4>
+                                Pain and Discomfort 
+                                <span  class="btn-icon-round btn-icon-round-sm bg-success" style=" float: right; "><i class="glyphicon glyphicon-ok"></i></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    
+</div>
