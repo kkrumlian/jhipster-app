@@ -111,6 +111,7 @@
         <metrics-spring.version>3.0.1</metrics-spring.version>
         <swagger-springmvc.version>0.8.8</swagger-springmvc.version>
         <usertype-core.version>3.2.0.GA</usertype-core.version>
+        <postgresql.version>9.3-1100-jdbc41</postgresql.version>
     </properties>
 
     <repositories>
@@ -410,6 +411,11 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1100-jdbc41</version>
         </dependency>
 
         <!-- Test dependencies -->
