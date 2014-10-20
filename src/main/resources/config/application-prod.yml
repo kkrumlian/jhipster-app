@@ -1,5 +1,10 @@
 server:
     port: 8080
+    tomcat:
+        accessLogEnabled: true
+        accessLogPattern: '%h %l %u %t "%r" %s %b %{Host}i %{Location}o'
+        baseDir: ''
+        backgroundProcessorDelay: 1
 
 spring:
     profiles: prod

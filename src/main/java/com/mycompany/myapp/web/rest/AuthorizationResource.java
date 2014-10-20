@@ -76,4 +76,22 @@ public class AuthorizationResource {
       log.debug("REST request to delete Authorization : {}", id);
       authorizationRepository.delete(id);
   }
+
+    /**
+     * GET  /rest/oc/authorizations -> get authorizations.
+     * This is interim solution until we figure out authenticating web service calls
+     */
+    @RequestMapping(value = "/rest/oc/authorizations",
+            method = RequestMethod.GET,
+            produces = "application/json")
+    @Timed
+    public List<Authorization> get(
+            @RequestParam(value = "studyoid", required = true) String studyoid,
+            @RequestParam(value = "instanceurl", required = true) String instanceurl
+    ) {
+
+        log.debug("REST request to get Authorization : {},{}", studyoid, instanceurl);
+        List<Authorization> authorizations = authorizationRepository.findByStudyStudyOidAndStudyInstanceUrlIgnoreCase(studyoid, instanceurl);
+        return authorizations;
+    }
 }
