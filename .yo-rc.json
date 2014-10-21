@@ -1,8 +1,8 @@
 {
   "generator-jhipster": {
     "baseName": "jhipster",
-    "packageName": "com.mycompany.myapp",
-    "packageFolder": "com/mycompany/myapp",
+    "packageName": "com.openclinica.ui",
+    "packageFolder": "com/openclinica/ui",
     "authenticationType": "cookie",
     "hibernateCache": "ehcache",
     "clusteredHttpSession": "no",

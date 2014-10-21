@@ -52,9 +52,9 @@ cache:
 hotReload:
     enabled: true
     package:
-      project: com.mycompany.myapp
-      domain: com.mycompany.myapp.domain
-      restdto: com.mycompany.myapp.web.rest.dto
+      project: com.openclinica.ui
+      domain: com.openclinica.ui.domain
+      restdto: com.openclinica.ui.web.rest.dto
     liquibase:
       defaultCatalogName: 
       defaultSchema: public
